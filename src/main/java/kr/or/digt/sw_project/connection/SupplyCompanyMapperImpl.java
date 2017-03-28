@@ -34,6 +34,12 @@ public class SupplyCompanyMapperImpl implements SupplyCompanyMapper {
 		return sqlSession.insert(namespace + "insertSupplyCompany", supplyCompany);
 	}
 
+	@Override
+	public int updateSupplyCompany(SupplyCompany supplyCompany) {
+		log.debug("updateSupplyCompany()");
+		return sqlSession.update(namespace + "updateSupplyCompany", supplyCompany);
+	}
+
 	
 }
 

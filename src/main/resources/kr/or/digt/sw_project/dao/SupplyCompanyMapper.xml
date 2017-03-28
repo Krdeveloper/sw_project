@@ -17,6 +17,11 @@
 		INSERT INTO supply_company (comp_code, comp_name, comp_addr, comp_tel, comp_isExist)
 		VALUES (#{compCode},#{compName},#{compAddr},#{compTel},#{compIsExist})
 	</insert>
+	<update id="updateSupplyCompany" parameterType="SupplyCompany">
+		UPDATE supply_company
+		SET comp_name=#{compName}, comp_addr=#{compAddr}, comp_tel=#{compTel}, comp_isExist=#{compIsExist} 
+		WHERE comp_code=#{compCode}
+	</update>
 	
 	
 </mapper>

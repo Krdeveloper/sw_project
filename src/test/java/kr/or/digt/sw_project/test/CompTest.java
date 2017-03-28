@@ -42,6 +42,13 @@ public class CompTest {
 		Assert.assertEquals(1, res);
 	}*/
 	
+	@Test
+	public void testUpdateSupplyCompany() {
+		SupplyCompany supplyCompany = new SupplyCompany("SC007", "testUpdate", "up","010",true);
+		int res = supplyCompanyService.updateSupplyCompany(supplyCompany);
+		Assert.assertEquals(1, res);
+	}
+	
 	
 
 }

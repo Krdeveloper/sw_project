@@ -32,4 +32,13 @@ public class SupplyCompanyService {
 			return res;
 		}
 	}
+	
+	public int updateSupplyCompany (SupplyCompany supplyCompany) {
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.opensesstion()) {
+			SupplyCompanyMapper supplyCompanyMapper = new SupplyCompanyMapperImpl(sqlSession);
+			int res = supplyCompanyMapper.updateSupplyCompany(supplyCompany);
+			sqlSession.commit();
+			return res;
+		}
+	}
 }
