@@ -8,6 +8,15 @@
 		<result property="compTel" column="comp_tel"/>
 		<result property="compIsExist" column="comp_isExist"/>
 	</resultMap>
+	<select id="findSupplyCompanyByCode" parameterType="String" resultMap="SupplyCompanyResult">
+		SELECT comp_code, comp_name, comp_addr, comp_tel, comp_isExist
+		FROM supply_company 
+		WHERE comp_code=#{compCode}
+	</select>
+	<insert id="insertSupplyCompany" parameterType="SupplyCompany">
+		INSERT INTO supply_company (comp_code, comp_name, comp_addr, comp_tel, comp_isExist)
+		VALUES (#{compCode},#{compName},#{compAddr},#{compTel},#{compIsExist})
+	</insert>
 	
 	
 </mapper>
